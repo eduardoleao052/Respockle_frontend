@@ -21,6 +21,7 @@ export default function Community({setTrigger, feed, setFeed}) {
   const location = useLocation()
 
   useEffect(() => {
+    window.scrollTo(0,0);
     getUsers();
     getLikesByUser();
     getProfiles();
