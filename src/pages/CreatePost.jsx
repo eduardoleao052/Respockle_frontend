@@ -81,7 +81,7 @@ export default function CreatePost() {
         <br />
         <div className="create-post-image-div">
           <p style={{marginBottom: '10px'}}>Image:</p>
-          <label htmlFor="postInputField"><img className="post-btn-info" src={`${postPicture ? imageUrl : `${import.meta.env.VITE_API_URL}assets/default_image_picture.jpg`}`}/></label>
+          <label htmlFor="postInputField"><img className="post-btn-info" src={`${postPicture ? imageUrl : `${import.meta.env.VITE_API_URL}/assets/default_image_picture.jpg`}`}/></label>
           <input type="file" id="postInputField" accept="image/*" onChange={(e) => {setPostPicture(e.target.files[0]); setImageUrl(URL.createObjectURL(e.target.files[0]))}}/>
           <br />
         </div>
