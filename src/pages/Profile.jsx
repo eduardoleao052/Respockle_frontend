@@ -189,7 +189,7 @@ export default function Profile({feed, setFeed}) {
   return (
     <div className='main'>
       <div className='main-profile-profile-header'>
-        <img className='main-profile-profile-picture' src={`${import.meta.env.VITE_API_URL}${profile ? profile.profile_picture : 'assets/default_profile_picture.png'}`} alt="profile_picture" />
+        <img className='main-profile-profile-picture' src={`${import.meta.env.VITE_API_URL}${profile ? profile.profile_picture : '/assets/default_profile_picture.png'}`} alt="profile_picture" />
         <div className='main-profile-profile-header-div'>
           <h1>{username ? username.username : '...'}{username ? username.is_health_professional ? <span className='post-header-diamond'>&#9670;</span> : null : null}</h1>
           <p style={{color: 'gray'}}>Joined {profile ? formatTime(profile.created_at) : '...'} ago</p>
@@ -204,7 +204,7 @@ export default function Profile({feed, setFeed}) {
             <h1>Update Profile</h1>
             <div className='popup-div-body'>
               <div className='popup-div-body-top more_gap'>
-                <label htmlFor="inputField"><img className="btn-info" src={`${profilePicture ? imageUrl : profile.profile_picture ? `${import.meta.env.VITE_API_URL}${profile.profile_picture}` : `${import.meta.env.VITE_API_URL}assets/default_profile_picture.png`}`}/></label>
+                <label htmlFor="inputField"><img className="btn-info" src={`${profilePicture ? imageUrl : profile.profile_picture ? `${import.meta.env.VITE_API_URL}${profile.profile_picture}` : `${import.meta.env.VITE_API_URL}/assets/default_profile_picture.png`}`}/></label>
                 <input type="file" id="inputField" accept="image/*" onChange={(e) => {setProfilePicture(e.target.files[0]); setImageUrl(URL.createObjectURL(e.target.files[0]));}}/>
                 <div className='popup-div-body-top-right more_gap'>
                   <p>Description:</p>
@@ -247,7 +247,7 @@ export default function Profile({feed, setFeed}) {
         <div className="post-div" onClick={() => navigateTo(`/detail/${el.id}`,{ state: {from: location} })} key={id}>
           <div className="main-feed-post-header">
             <div style={{display: 'flex', flexDirection: 'row', gap: '10px'}}>
-            <img className="main-feed-post-header-image" src={`${import.meta.env.VITE_API_URL}${communities ? communities.filter((c) => c.id === el.community)[0]?.community_picture ? communities.filter((c) => c.id === el.community)[0]?.community_picture : 'assets/default_community_image.png': 'assets/default_community_image.png'}`} alt="" />
+            <img className="main-feed-post-header-image" src={`${import.meta.env.VITE_API_URL}${communities ? communities.filter((c) => c.id === el.community)[0]?.community_picture ? communities.filter((c) => c.id === el.community)[0]?.community_picture : '/assets/default_community_image.png': '/assets/default_community_image.png'}`} alt="" />
             <div className="main-feed-post-header-info">
               <button onClick={(e) => {e.stopPropagation(); navigateTo(`/community/${el.community}`);}} className='main-feed-post-url bold'>{communities ? communities.filter((community) => community.id === el.community)[0].name : '...'}</button>
               <button onClick={(e) => {e.stopPropagation(); navigateTo(`/profile/${el.author}`);}} className='main-feed-post-url'>{el.author_username}{el.author_is_health_professional ? <span className='post-header-diamond'>&#9670;</span> : null}</button>

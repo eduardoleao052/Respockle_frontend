@@ -245,7 +245,7 @@ export default function DetailPost() {
         <button className="main-feed-post-body-back" onClick={() => navigateTo(-1)}>&#8592;</button>
         <div className="main-feed-post-header">
             <div style={{display: 'flex', flexDirection: 'row', gap: '10px'}}>
-            <img className="main-feed-post-header-image" src={`${import.meta.env.VITE_API_URL}${communities ? communities.filter((c) => c.id === post.community)[0]?.community_picture ? communities.filter((c) => c.id === post.community)[0]?.community_picture : 'assets/default_community_image.png': 'assets/default_community_image.png'}`} alt="" />          
+            <img className="main-feed-post-header-image" src={`${import.meta.env.VITE_API_URL}${communities ? communities.filter((c) => c.id === post.community)[0]?.community_picture ? communities.filter((c) => c.id === post.community)[0]?.community_picture : '/assets/default_community_image.png': '/assets/default_community_image.png'}`} alt="" />          
             <div className="main-feed-post-header-info">
               <button className='main-feed-post-url bold' onClick={() => navigateTo(`/community/${post.community}`)}>
                 {communities ? communities.filter((community) => community.id === post.community)[0].name : null}
@@ -381,8 +381,8 @@ export default function DetailPost() {
                   src={`${import.meta.env.VITE_API_URL}${profiles ? 
                     profiles.filter((c) => c.user_id === post.warn_author)[0]?.profile_picture ? 
                     profiles.filter((c) => c.user_id === post.warn_author)[0].profile_picture : 
-                    'assets/default_profile_picture.png': 
-                    'assets/default_profile_picture.png'}`}/>
+                    '/assets/default_profile_picture.png': 
+                    '/assets/default_profile_picture.png'}`}/>
               <div className="main-feed-post-header-info">
                   <button style={{paddingTop: '6px'}} className='main-feed-post-url bold' onClick={(e) => {navigateTo(`/profile/${post.warn_author}`);}}>
                     {post.warn_author_username}<span className='post-header-diamond'>&#9670;</span>
@@ -396,7 +396,7 @@ export default function DetailPost() {
         <div className="post-div" key={id}>
           <div className="main-feed-post-header">
             <div style={{display: 'flex', flexDirection: 'row', gap: '10px'}}>
-            <img className="main-feed-post-header-image" src={`${import.meta.env.VITE_API_URL}${el.author_profile_picture ? el.author_profile_picture  : 'assets/default_profile_picture.png'}`} alt="" />          
+            <img className="main-feed-post-header-image" src={`${import.meta.env.VITE_API_URL}${el.author_profile_picture ? el.author_profile_picture  : '/assets/default_profile_picture.png'}`} alt="" />          
             <div className="main-feed-post-header-info">
               <button style={{paddingTop: '6px'}} className='main-feed-post-url bold' onClick={(e) => {navigateTo(`/profile/${el.author}`);}}>
                 {el.author_username}{el.author_is_health_professional ? <span className='post-header-diamond'>&#9670;</span> : null}

@@ -119,7 +119,7 @@ export default function Sidebar({trigger}) {
           <h1>Create a Community</h1>
           <div className='popup-div-body'>
             <div className='popup-div-body-top'>
-              <label htmlFor="inputField"><img className="btn-info" src={`${community_picture ? imageUrl : `${import.meta.env.VITE_API_URL}assets/default_community_image.png`}`}/></label>
+              <label htmlFor="inputField"><img className="btn-info" src={`${community_picture ? imageUrl : `${import.meta.env.VITE_API_URL}/assets/default_community_image.png`}`}/></label>
               <input type="file" id="inputField" accept="image/*" onChange={(e) => {set_community_picture(e.target.files[0]); console.log(e.target.files[0]); setImageUrl(URL.createObjectURL(e.target.files[0]));}}/>
               <div className='popup-div-body-top-right'>
                 <p>Name:</p>
@@ -143,14 +143,14 @@ export default function Sidebar({trigger}) {
           className='sidebar-community-button' 
           style={{backgroundColor: origin === 'home' ? '#e1e1e1' : 'white'}} 
           onClick={() => {navigateTo(`/`)}}>
-          <img className="sidebar-community-image" src={`${import.meta.env.VITE_API_URL}assets/home.png`} alt="community image" />
+          <img className="sidebar-community-image" src={`${import.meta.env.VITE_API_URL}/assets/home.png`} alt="community image" />
           <p>Home</p>
         </button>
         <button 
           className='sidebar-community-button' 
           style={{backgroundColor: origin === 'saved_posts' ? '#e1e1e1' : 'white'}} 
           onClick={() => navigateTo(`/saved_posts`)}>
-          <img className="sidebar-community-image" src={`${import.meta.env.VITE_API_URL}assets/saved.png`} alt="community image" />
+          <img className="sidebar-community-image" src={`${import.meta.env.VITE_API_URL}/assets/saved.png`} alt="community image" />
           <p>Saved</p>
         </button>
         <div className='horizontal-line'></div>

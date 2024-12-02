@@ -202,7 +202,7 @@ export default function Community({setTrigger, feed, setFeed}) {
     <div className='main'>
       <div className='main-header'>
         <div className='community-title-picture'>
-          <img className="community-profile-picture" src={`${import.meta.env.VITE_API_URL}${communities ? communities.filter((c) => c.id === communityId)[0]?.community_picture ? communities.filter((c) => c.id === communityId)[0]?.community_picture : 'assets/default_profile_picture.png': 'assets/default_profile_picture.png'}`} alt="" />
+          <img className="community-profile-picture" src={`${import.meta.env.VITE_API_URL}${communities ? communities.filter((c) => c.id === communityId)[0]?.community_picture ? communities.filter((c) => c.id === communityId)[0]?.community_picture : '/assets/default_profile_picture.png': '/assets/default_profile_picture.png'}`} alt="" />
           <h1>{communities ? communities.filter((c) => c.id === communityId)[0]?.name : null}</h1>
         </div>
         <h4 style={{marginTop:'10px', marginBottom:'10px'}}>{communities ? communities.filter((c) => c.id === communityId)[0]?.description : null}</h4>
@@ -263,8 +263,8 @@ export default function Community({setTrigger, feed, setFeed}) {
               src={`${import.meta.env.VITE_API_URL}${profiles ? 
                 profiles.filter((c) => c.user_id === el.author)[0]?.profile_picture ? 
                 profiles.filter((c) => c.user_id === el.author)[0].profile_picture : 
-                'assets/default_profile_picture.png': 
-                'assets/default_profile_picture.png'}`}/>
+                '/assets/default_profile_picture.png': 
+                '/assets/default_profile_picture.png'}`}/>
               <div className="community-feed-post-header-info">
                 <button onClick={(e) => {e.stopPropagation(); navigateTo(`/profile/${el.author}`);}} className='community-feed-post-url'>{el.author_username}{el.author_is_health_professional ? <span className='post-header-diamond'>&#9670;</span> : null}</button>
               </div>
